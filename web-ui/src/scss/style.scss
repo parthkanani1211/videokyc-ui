@@ -1,0 +1,174 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreuiV2/scss/coreui.scss";
+
+// Temp fix for reactstrap
+@import "~@coreui/coreuiV2/scss/_dropdown-menu-right.scss";
+
+// If you want to add something do it here
+@import "custom";
+
+// ie fixes
+@import "ie-fix";
+
+/* Obvious Css Start */
+
+.login-page-wrapper {
+  background-image: url("../assets/img/login-bg.jpg");
+  background-size: cover;
+}
+
+.logo-image img {
+  margin: auto;
+}
+
+.login-page-wrapper input {
+  background-color: #f9f9f9 !important;
+}
+
+header .dropdown-item.active,
+.dropdown-item:active {
+  background-color: rgba(96, 170, 249, 0.2);
+  outline: 0;
+}
+
+::-webkit-input-placeholder,
+input {
+  font-size: 14px;
+}
+
+.img-avatar {
+  margin-right: 0 !important;
+}
+
+.app-header {
+  height: 70px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.11);
+}
+
+.app-footer {
+  flex: 0 0 0;
+  padding: 0;
+}
+
+.agent-tab-active {
+  color: #006cfb;
+  // border-bottom: 5px solid #006cfb;
+}
+
+@media only screen and (max-width: 600px) {
+
+  // thead > tr > th:last-child,
+  // .last-col {
+  //   position: sticky !important;
+  //   right: -1px;
+  //   background-color: white;
+  //   z-index: 2;
+  // }
+  // .card-body {
+  //   // padding-right: 0px !important;
+  // }
+
+  .table thead tr:first-child>th:last-child {
+    background-color: #f4f4f4;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  table.customDataTable caption {
+    background-image: none;
+  }
+
+  table.customDataTable thead {
+    display: none;
+  }
+
+  table.customDataTable tbody td {
+    display: block;
+    padding: .6rem;
+  }
+
+  // table.customDataTable tbody tr td:first-child {
+  //     background: #006cfb;
+  //     color: #fff;
+  // }
+  // table.customDataTable tbody tr td:first-child a {
+  //   color: #fff;
+  // }
+
+  // table.customDataTable tbody tr td:first-child:before {
+  //   color: #fff;
+  // }
+
+  //
+  table.customDataTable .customDataTableRowId {
+    display: none
+  }
+
+  table.customDataTable .customDataTableRowCustomerName {
+    background: #006cfb;
+    color: #fff;
+  }
+
+  table.customDataTable .customDataTableRowCustomerName {
+    background: #006cfb;
+    color: #fff;
+  }
+
+  table.customDataTable .customDataTableRowCustomerName a {
+    color: #fff;
+  }
+
+  table.customDataTable .customDataTableRowCustomerName:before {
+    color: #fff;
+  }
+
+  table.customDataTable .customDataTableRowMobileNumber {
+    display: none;
+  }
+  table.customDataTable .customDataTableRowStartTime {
+    display: none;
+  }
+  table.customDataTable .customDataTableRowLastupdatedon {
+    display: none;
+  }
+  table.customDataTable .displayEnableForTableRow
+  {
+    display: block;
+  }
+  table.customDataTable .displayNoneForTableRow
+  {
+    display: none;
+  }
+  // table.customDataTable .customDataTableRowStatus {
+   
+  // }
+  // table.customDataTable .customDataTableRowAction {
+   
+  // }
+
+  //
+
+  table.customDataTable tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    width: 10rem;
+  }
+
+  table.customDataTable tbody td a,
+  table.customDataTable tbody td div,
+  table.customDataTable tbody td button {
+    display: inline-block;
+    width: auto;
+  }
+
+  table.customDataTable tr th:last-child,
+  table.customDataTable tr td:last-child {
+    max-width: 100% !important;
+    min-width: 100px !important;
+    width: 100% !important;
+  }
+}
