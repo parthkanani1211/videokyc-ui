@@ -2,5 +2,7 @@
   "scripts": {
     "installwebui": "cd web-ui && yarn install",
     "buildwebui": "cd web-ui && yarn build:dev"
+    "license": "Apache-2.0"
+
   }
 }
