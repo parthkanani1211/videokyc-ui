@@ -10,7 +10,7 @@ pipeline {
         stage("Deploy") {
             steps {
                 sh "sudo rm -rf /var/www/videokycui"
-                 sh "sudo cp -r ${WORKSPACE}/web-ui/build/ /var/www/videokycui/"
+                 sh "sudo cp -r /var/lib/jenkins/workspace/web-ui/build/ /var/www/videokycui/"
             }
         }
     }
