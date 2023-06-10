@@ -1,41 +1,22 @@
-# Use an appropriate base image
-FROM <base-image>
+# Use the official Node.js base image
+FROM node:14
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the Jenkinsfile into the container
-COPY Jenkinsfile .
-
-# Install any dependencies required
-RUN apt-get update && apt-get install -y <dependency-package>
-
-# Copy the project files into the container
-COPY . .
-
-# Build stage
-FROM <build-base-image> as build
-WORKDIR /app
+# Copy the package.json and package-lock.json files
+COPY package*.json ./
 
 # Install project dependencies
-RUN yarn installwebui
+RUN npm install
 
-# Build the project
-RUN yarn buildwebui
-
-# Deploy stage
-FROM <deploy-base-image>
-WORKDIR /var/www/videokycui
-
-# Copy the built files from the build stage
-COPY --from=build /app/web-ui/build .
-
-# Clean up any unwanted files
-RUN rm -rf <unwanted-files>
+# Copy the rest of the application code
+COPY . .
 
 # Expose the necessary ports
-EXPOSE <port>
+EXPOSE 80
 
-# Define the command to run the container
-CMD ["<command-to-run>"]
+# Set the container's entry point command
+CMD ["npm", "start"]
+
 
